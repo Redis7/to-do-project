@@ -1,0 +1,86 @@
+.card {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: 5px auto;
+  min-width: 200px;
+  max-width: 700px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card.red-border {
+  background: linear-gradient(135deg, #c8d8e4, #ffffff);
+}
+.card.blue-border {
+  background: linear-gradient(135deg, #8c9aaa, #ffffff);
+}
+.card.green-border {
+  background: linear-gradient(135deg, #52ab98, #ffffff);
+}
+.card-header {
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+}
+
+.card-description {
+  font-size: 16px;
+  color: #000000;
+  margin: 0;
+  display: flex;
+  width: 90%;
+}
+
+.card-values {
+  color: #020202;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.button1 {
+  background-color: #56616d;
+  width: 75px;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  padding: 5px;
+  /* margin: 5px; */
+}
+.button2 {
+  background-color: #f51010;
+  width: 75px;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  padding: 5px;
+  /* margin: 5px; */
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+.card-value span {
+  font-weight: 600;
+}
+
+/* Add additional styling as needed */

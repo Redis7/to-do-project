@@ -1,0 +1,32 @@
+.card-holder {
+  max-height: 85vh;
+  width: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.text-header {
+  height: 50px;
+  font-size: 35px;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #6c90b9;
+}
+@media (max-width: 1200px) {
+  .card-holder {
+    width: 95%; /* Adjust the width as needed */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+  }
+  .card-holder::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on Chrome, Safari, and newer Edge */
+  }
+}
