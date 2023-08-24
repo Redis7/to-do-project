@@ -1,14 +1,13 @@
 import "./App.css";
 import FormComponent from "./components/form/form";
-import CardHolder from "./components/cardHolder/cardHolder";
+import LabTabs from "./components/tabs";
 
 function App() {
   return (
     <div className="App">
       <FormComponent />
       <div className="app-page">
-        <div class="prova"></div>
-        <CardHolder />
+        <LabTabs />
       </div>
     </div>
   );

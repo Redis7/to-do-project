@@ -41,7 +41,9 @@
   color: #000000;
   margin: 0;
   display: flex;
-  width: 90%;
+  width: 85%;
+  text-align: start;
+  margin-bottom: 25px;
 }
 
 .card-values {
@@ -82,5 +84,25 @@
 .card-value span {
   font-weight: 600;
 }
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 25px;
+  }
+  .card-value {
+    font-size: 14px;
+  }
+  .card-header {
+    margin-bottom: 0;
+  }
+  .card-description {
+    margin-bottom: 20px;
+  }
+  .card {
+    flex: 1;
+    min-width: 200px; /* Adjust as needed */
 
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
 /* Add additional styling as needed */

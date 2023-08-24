@@ -11,6 +11,7 @@ const Card = ({
   hasRedBg,
   hasBlueBg,
   hasGreenBg,
+  onEdit
 }) => {
   const handleDelete = async () => {
     try {
@@ -37,7 +38,7 @@ const Card = ({
         <h2 className="card-title">{title}</h2>
         <p className="card-description">{description}</p>
         <div className="buttons">
-          <button className="button1">Edit</button>
+          <button className="button1" onClick={onEdit}>Edit</button>
           <button className="button2" onClick={handleDelete}>
             Delete
           </button>
