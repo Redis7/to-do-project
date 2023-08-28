@@ -3,9 +3,13 @@ import axios from "axios";
 import Card from "../card/card";
 import "./cardHolder.css";
 import photo from "../../assets/7706458.webp";
+import EditCardModal from "../modal/modal";
 
 const CardHolder = ({ selectedTab }) => {
   const [cardsData, setCardsData] = useState([]);
+  const [editedCard, setEditedCard] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   useEffect(() => {
     axios
@@ -17,6 +21,34 @@ const CardHolder = ({ selectedTab }) => {
         console.error("Error fetching data:", error);
       });
   }, [selectedTab]);
+
+  const handleEdit = (card) => {
+    setEditedCard(card);
+    setIsModalOpen(true);
+  };
+
+  const handleSave = async (updatedCard) => {
+    try {
+      await axios.post(
+        "http://192.168.10.141:8080/todo/task",
+        updatedCard
+      );
+
+      // Update cardsData with updated card values
+      const updatedCardsData = cardsData.map((card) =>
+        card.id === updatedCard.id ? updatedCard : card
+      );
+      setCardsData(updatedCardsData);
+    } catch (error) {
+      console.error("Error saving card:", error);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setEditedCard(null);
+  };
+
 
   return (
     <div>
@@ -48,8 +80,15 @@ const CardHolder = ({ selectedTab }) => {
               hasRedBg={card.status === "TODO"}
               hasBlueBg={card.status === "DOING"}
               hasGreenBg={card.status === "DONE"}
+              onEdit={() => handleEdit(card)}
             />
           ))}
+          <EditCardModal
+        isOpen={isModalOpen}
+        card={editedCard}
+        onSave={handleSave}
+        onClose={handleCloseModal}
+      />
         </div>
       )}
     </div>

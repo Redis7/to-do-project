@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./form.css"; // Import the CSS file for styling
 import axios from "axios";
 
+
 const FormComponent = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
   const [selectedOption1, setSelectedOption1] = useState("");
   const [category, setCategory] = useState([]);
+  
 
   useEffect(() => {
     axios
@@ -97,8 +99,10 @@ const FormComponent = () => {
                 {category.name}
               </option>
             ))}
-            <option value="">Add Category</option>
+          
+            
           </select>
+       
         </div>
         <button type="submit" className="submit-button">
           Save
