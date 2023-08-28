@@ -35,7 +35,7 @@ function Login() {
   return (
     <div className="login-container">
       <form className="login-modal-holder" onSubmit={buttonHandler}>
-        <h1> LogIn </h1>
+        <h1> Log in </h1>
         <div className="login-input">
           <input type="email" required={true} placeholder="yourname@email.com" ref={username} />
         </div>
