@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./form.css"; // Import the CSS file for styling
+import "./form.css"; 
 import axios from "axios";
 
 
@@ -67,13 +67,13 @@ const FormComponent = () => {
   };
   const saveCategory = async () => {
     try {
-      // Make the API POST request using axios
+     
       const response = await axios.post("http://192.168.10.141:8080/todo/category", {
         name: name,
       });
 
       console.log("Category saved:", response.data);
-      closeModal(); // Close the modal after saving
+      closeModal(); 
       window.location.reload();
     } catch (error) {
       console.error("Error saving category:", error);
@@ -99,8 +99,8 @@ const FormComponent = () => {
             placeholder="Description"
             value={description}
             onChange={handleInput2Change}
-            rows={3} // Specify the number of rows (lines)
-            style={{ resize: "vertical" }} // Allow vertical resizing
+            rows={3} 
+            style={{ resize: "vertical" }} 
           />
         </div>
         <div className="form-group select-group">
@@ -158,7 +158,7 @@ const FormComponent = () => {
               value={name}
               onChange={handleInput1Change}
             />
-            <div style={{ marginTop: '20px', display: 'flex', gap: '10px' ,justifyContent: 'center'}}>
+            <div style={{ marginTop: '20px', marginBottom:'20px', display: 'flex', gap: '10px' ,justifyContent: 'center'}}>
   <button
     onClick={closeModal}
     style={{
